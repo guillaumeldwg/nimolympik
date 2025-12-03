@@ -56,7 +56,7 @@ header {
 }
 
 #site-logo-img {
-    max-height: 70px; /* Taille du logo ajustée */
+    max-height: 120px; /* Taille du logo ajustée */
     width: auto;
 }
 
@@ -488,3 +488,153 @@ nav a.active:hover {
         max-width: 90%;
     }
 }
+/* --- Styles pour la Page Stats & Records --- */
+
+.stats-grid {
+    display: grid;
+    /* Crée deux colonnes de taille égale */
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.stats-card {
+    background-color: var(--nimes-white);
+    padding: 15px;
+    border-left: 5px solid var(--nimes-red); /* Bande rouge sur le côté */
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.stats-card h3 {
+    color: var(--nimes-dark);
+    font-size: 1.1em;
+    margin-top: 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--nimes-light-gray);
+}
+
+.individual-stats {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+.individual-stats th {
+    background-color: var(--nimes-dark);
+    color: var(--nimes-white);
+    padding: 8px;
+}
+
+.individual-stats td {
+    padding: 8px;
+    border-bottom: 1px dashed var(--nimes-light-gray);
+    text-align: center;
+}
+
+.record-list {
+    list-style: none;
+    padding: 0;
+    line-height: 2.2;
+}
+
+.record-list li {
+    padding: 5px 0;
+    border-bottom: 1px dashed var(--nimes-light-gray);
+    text-align: left;
+}
+
+/* Responsive pour les petits écrans */
+@media (max-width: 768px) {
+    .stats-grid {
+        /* Passe à une colonne sur les petits écrans */
+        grid-template-columns: 1fr; 
+    }
+}
+
+/* --- Styles pour les Résultats des Matchs (Scores) --- */
+
+.next-match-banner {
+    background-color: #fffae8; /* Jaune très pâle */
+    border: 2px solid #ffc107;
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.next-match-banner h3 {
+    color: var(--nimes-dark);
+    margin-top: 0;
+}
+
+.scores-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.scores-table thead th {
+    background-color: var(--nimes-dark);
+    color: var(--nimes-white);
+    padding: 12px 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.scores-table tbody td {
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--nimes-light-gray);
+    vertical-align: middle;
+}
+
+/* Couleurs spécifiques aux résultats */
+.result-win {
+    background-color: #e0ffe0; /* Vert clair */
+    font-weight: bold;
+}
+.result-loss {
+    background-color: #ffe0e0; /* Rouge clair */
+}
+.result-draw {
+    background-color: #fffac2; /* Jaune/Gris clair */
+}
+
+.scores-table tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+.score-cell {
+    font-weight: bold;
+    color: var(--nimes-red);
+}
+
+/* Styles page-content et section pour la cohérence */
+.section {
+    background-color: var(--nimes-white);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page-content {
+    padding: 30px; 
+    margin-top: 20px;
+}
+
+/* --- Mise à jour pour que l'En-tête devienne cliquable --- */
+
+/* Le lien englobant le logo doit hériter de la position absolue */
+#logo-left-link {
+    position: absolute; /* Positionnement absolu pour le lien */
+    left: 20px; /* Décalage à gauche */
+    top: 50%; /* Commence à la moitié de la hauteur */
+    transform: translateY(-50%); /* Centrage vertical */
+    z-index: 10;
+    text-decoration: none; /* Enlève la ligne du lien */
+    color: inherit;
+}
+/* Note : le style original pour #logo-left-container et #site-logo-img doit être conservé. */
