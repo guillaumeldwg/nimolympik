@@ -233,3 +233,120 @@ nav a.active:hover {
     background-color: var(--nimes-red); /* Reste en rouge au survol */
     color: var(--nimes-white);
 }
+
+.twitter-feed-container {
+    padding-top: 15px;
+    /* Assure que le flux prend toute la largeur disponible */
+    max-width: 100%; 
+}
+
+
+/* --- Styles pour la Formation Stratégique (Équipe Type) --- */
+
+.formation-field {
+    position: relative;
+    max-width: 650px; /* RÉDUCTION DE LA TAILLE GLOBALE */
+    margin: 20px auto;
+}
+
+.field-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.player-shirt {
+    position: absolute;
+    text-align: center;
+    color: var(--nimes-dark);
+    font-size: 0.85em; /* RÉDUCTION LÉGÈRE DE LA TAILLE DE POLICE */
+    font-weight: bold;
+    cursor: default;
+    z-index: 5;
+    /* Styles du maillot (pour visibilité) */
+    background-color: var(--nimes-white); 
+    border: 1px solid var(--nimes-dark);
+    padding: 2px;
+    border-radius: 4px;
+    width: 95px; /* AUGMENTATION DE LA LARGEUR POUR LES NOMS LONGS */
+    line-height: 1.2;
+    transition: transform 0.2s;
+}
+
+.player-shirt:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 5px rgba(227, 6, 19, 0.7);
+}
+
+.player-number {
+    display: block;
+    font-size: 1.2em;
+    color: var(--nimes-red);
+}
+
+.player-name {
+    display: block;
+    font-size: 0.8em;
+    font-weight: normal;
+    text-transform: uppercase;
+    /* Nous gardons nowrap mais nous avons augmenté la largeur pour éviter le débordement */
+    white-space: nowrap; 
+}
+
+/* * CONSERVATION DES POSITIONS ABSOLUES 
+ * (Si vous changez la taille de l'image, ces pourcentages pourraient nécessiter un ajustement fin)
+ */
+.gk-pos { top: 90%; left: 50%; transform: translate(-50%, -50%); }
+.dg-pos { top: 78%; left: 15%; transform: translate(-50%, -50%); } 
+.dd-pos { top: 78%; left: 85%; transform: translate(-50%, -50%); } 
+.dc-left-pos { top: 73%; left: 38%; transform: translate(-50%, -50%); } 
+.dc-right-pos { top: 73%; left: 62%; transform: translate(-50%, -50%); } 
+.md-pos { top: 58%; left: 50%; transform: translate(-50%, -50%); } 
+.mc-left-pos { top: 40%; left: 35%; transform: translate(-50%, -50%); } 
+.mc-right-pos { top: 40%; left: 65%; transform: translate(-50%, -50%); } 
+.mo-pos { top: 30%; left: 50%; transform: translate(-50%, -50%); } 
+.bu-left-pos { top: 18%; left: 40%; transform: translate(-50%, -50%); } 
+.bu-right-pos { top: 18%; left: 60%; transform: translate(-50%, -50%); }
+/* Positionnement des joueurs (Ajustez les pourcentages selon votre image !) */
+
+/* Gardien */
+.gk-pos { top: 90%; left: 50%; transform: translate(-50%, -50%); }
+
+/* Défenseurs (D, D, D, D dans l'image) */
+.dg-pos { top: 78%; left: 15%; transform: translate(-50%, -50%); } /* Défenseur Gauche */
+.dd-pos { top: 78%; left: 85%; transform: translate(-50%, -50%); } /* Défenseur Droit */
+.dc-left-pos { top: 73%; left: 38%; transform: translate(-50%, -50%); } /* Central Gauche */
+.dc-right-pos { top: 73%; left: 62%; transform: translate(-50%, -50%); } /* Central Droit */
+
+/* Milieux Défensifs (MD) */
+.md-pos { top: 58%; left: 50%; transform: translate(-50%, -50%); } 
+
+/* Milieux Centraux (M) */
+.mc-left-pos { top: 40%; left: 35%; transform: translate(-50%, -50%); } 
+.mc-right-pos { top: 40%; left: 65%; transform: translate(-50%, -50%); } 
+
+/* Milieux Offensifs (MO) */
+.mo-pos { top: 30%; left: 50%; transform: translate(-50%, -50%); } 
+
+/* Attaquants (A, A) */
+.bu-left-pos { top: 18%; left: 40%; transform: translate(-50%, -50%); } /* Attaquant Gauche */
+.bu-right-pos { top: 18%; left: 60%; transform: translate(-50%, -50%); } /* Attaquant Droit */
+
+
+/* --- Mise à jour des Styles pour le Tableau (Section 2) --- */
+
+.roster-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* Vous pouvez réutiliser les autres styles de tableau du classement (th, td, tr:hover, etc.) */
+
+/* NOUVEAU STYLE POUR LA VALEUR MARCHANDE */
+.roster-table tbody td:nth-child(8) {
+    font-weight: bold;
+    color: green; /* Rend la valeur marchande visible */
+}
