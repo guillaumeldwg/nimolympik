@@ -638,3 +638,107 @@ nav a.active:hover {
     color: inherit;
 }
 /* Note : le style original pour #logo-left-container et #site-logo-img doit être conservé. */
+
+/* =======================================================
+   Règles Média Queries pour l'Affichage sur Mobile/Tablette
+   ======================================================= */
+
+/* --- Règles Globales et Navigation sur Mobile (< 900px) --- */
+@media (max-width: 900px) {
+    
+    /* 1. En-tête */
+    header {
+        padding: 15px 0;
+    }
+    .header-content {
+        padding: 0 10px;
+        text-align: center; /* S'assurer que tout est centré */
+    }
+    
+    /* 2. Titre et Logo */
+    #site-logo {
+        font-size: 2em; /* Réduit la taille du titre principal */
+        padding: 5px 10px;
+    }
+    .header-content p {
+        font-size: 0.8em; /* Réduit le sous-titre */
+    }
+
+    /* Le lien du logo doit être recentré pour le mobile */
+    #logo-left-link {
+        /* On retire la position absolue pour ne pas écraser les autres éléments */
+        position: static; 
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        transform: none;
+    }
+    #site-logo-img {
+        max-height: 50px; /* Réduit la taille du logo image */
+        margin-bottom: 5px;
+    }
+    
+    /* 3. Menu de Navigation */
+    nav ul {
+        flex-wrap: wrap; /* Force les onglets à passer à la ligne */
+        gap: 5px 0; /* Espace vertical et horizontal réduit */
+        justify-content: space-around;
+        padding: 0 5px;
+    }
+    nav li {
+        margin: 0;
+        flex-basis: 30%; /* Chaque bouton prend environ 30% de la largeur */
+    }
+    nav a {
+        padding: 8px 5px; /* Réduit la taille des boutons */
+        font-size: 0.75em; /* Taille de police plus petite */
+    }
+}
+
+
+/* --- Règles Spécifiques aux Contenus et Tableaux (< 768px) --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    /* 1. Grilles (Accueil et Stats) */
+    .homepage-grid,
+    .stats-grid {
+        grid-template-columns: 1fr; /* Force la grille à une seule colonne */
+        gap: 15px;
+    }
+    
+    /* 2. Tableaux (Le problème principal : défilement horizontal) */
+    
+    /* Englobe la section pour permettre le défilement du contenu */
+    .section.page-content {
+        /* Permet le défilement horizontal de la section */
+        overflow-x: auto; 
+    }
+    
+    /* Force les tableaux à avoir une largeur minimale pour ne pas être écrasés */
+    .ranking-table,
+    .scores-table,
+    .roster-table {
+        min-width: 750px; /* Assure une largeur suffisante pour ne pas écraser les colonnes */
+    }
+    
+    /* Réduit l'espacement dans les tableaux pour gagner de la place */
+    .ranking-table th, .ranking-table td,
+    .roster-table th, .roster-table td,
+    .scores-table th, .scores-table td {
+        padding: 8px 5px; 
+        font-size: 0.8em; 
+    }
+    
+    /* 3. Formation Tactique (Effectif) */
+    .formation-field {
+        max-width: 95%; 
+        margin: 10px auto;
+    }
+    .player-shirt {
+        width: 70px; /* Réduit la taille des maillots */
+        font-size: 0.7em;
+    }
+}
