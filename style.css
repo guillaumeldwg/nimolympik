@@ -1,0 +1,235 @@
+/* --- Styles CSS de Base --- */
+:root {
+    --nimes-red: #E30613; /* Le vrai rouge du Nîmes Olympique */
+    --nimes-white: #FFFFFF;
+    --nimes-dark: #333333; /* Pour le fond du menu */
+    --nimes-light-gray: #f4f4f4;
+    --font-stack: 'Arial', sans-serif;
+}
+
+body {
+    font-family: var(--font-stack);
+    margin: 0;
+    padding: 0;
+    background-color: var(--nimes-light-gray);
+    color: var(--nimes-dark);
+}
+
+/* --- En-tête (Header) --- */
+header {
+    background-color: var(--nimes-red);
+    color: var(--nimes-white);
+    padding: 20px 0;
+    text-align: center;
+    position: relative; /* Pour positionner l'élément enfant */
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    /* Utilisé pour garder le titre centré */
+}
+
+/* Le "Logo" stylisé */
+#site-logo {
+    font-size: 3em;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+    display: inline-block;
+    border: 3px solid var(--nimes-white);
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: default;
+}
+
+/* --- Conteneur du Logo PNG (Haut à gauche) --- */
+#logo-left-container {
+    position: absolute; /* Positionnement absolu dans le header-content */
+    left: 20px; /* Décalage à gauche */
+    top: 50%; /* Commence à la moitié de la hauteur */
+    transform: translateY(-50%); /* Remonte de la moitié de sa propre hauteur pour centrage vertical */
+    z-index: 10; /* Assure que le logo est au-dessus des autres éléments */
+}
+
+#site-logo-img {
+    max-height: 70px; /* Taille du logo ajustée */
+    width: auto;
+}
+
+/* --- Navigation (Menu) --- */
+nav {
+    background-color: var(--nimes-dark);
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: var(--nimes-white);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    background-color: var(--nimes-white);
+    color: var(--nimes-red);
+}
+
+/* --- Contenu Principal (Espace à remplir) --- */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.main-content {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: var(--nimes-white);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-content h2 {
+    color: var(--nimes-red);
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+
+/* --- Styles pour les Sections Génériques (pour actu-preview) --- */
+.section {
+    background-color: var(--nimes-white);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    color: var(--nimes-red);
+    border-bottom: 3px solid var(--nimes-red);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* --- Styles pour la Page d'Accueil (homepage-grid) --- */
+
+.homepage-grid {
+    display: grid;
+    /* Crée 3 colonnes de taille égale */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.home-block {
+    background-color: var(--nimes-white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-top: 5px solid var(--nimes-red);
+}
+
+.home-block h3 a {
+    color: var(--nimes-dark);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 1.2em;
+}
+
+.home-block h3 a:hover {
+    color: var(--nimes-red);
+}
+
+/* Styles spécifiques au Classement */
+.ranking-position .number {
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--nimes-red);
+    display: block;
+    line-height: 1.1;
+}
+
+.ranking-detail {
+    font-weight: 500;
+}
+
+/* Styles spécifiques au Prochain Match */
+.match-info {
+    line-height: 1.6;
+}
+.match-time {
+    font-size: 1.2em;
+    color: var(--nimes-red);
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Responsive pour les petits écrans (téléphones) */
+@media (max-width: 800px) {
+    .homepage-grid {
+        /* Passe à une colonne sur les petits écrans */
+        grid-template-columns: 1fr; 
+    }
+}
+
+
+/* --- Styles pour les pages dédiées (hors accueil) --- */
+.section {
+    background-color: var(--nimes-white);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    color: var(--nimes-red);
+    border-bottom: 3px solid var(--nimes-red);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.page-content {
+    padding: 30px; 
+    margin-top: 20px;
+}
+
+.twitter-feed-container {
+    padding-top: 15px;
+    max-width: 100%; 
+}
+
+/* Style pour l'onglet actif */
+nav a.active {
+    background-color: var(--nimes-red); /* La couleur principale du Nîmes */
+    color: var(--nimes-white);
+}
+
+nav a.active:hover {
+    background-color: var(--nimes-red); /* Reste en rouge au survol */
+    color: var(--nimes-white);
+}
